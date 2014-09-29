@@ -17,13 +17,13 @@ import (
 
 func main() {
 	e := yaem.New("your imap username", "your imap password", yaem.GMAIL_SMTP_HOSTNAME, yaem.GMAIL_SMTP_PORT)
-	// to send text messages
+	// send a text message
 	phone_number := "5555555555"
 	err := e.SendText(phone_number, yaem.ATT_EMAIL_FORMAT, "Test Send Text", "Body Goes Here")
 	if err != nil {
 		fmt.Println("ERROR: ", err)
 	}
-	// to JUST send email
+	// or send da emailz
 	reciepents := []string{ "someone1@gmail.com", "someone2@gmail.com" }
 	err := e.SendEmail(reciepents, "Test Send Email", "Body Goes Here")
 	if err != nil {
